@@ -29,6 +29,13 @@ class RecipeView {
     this.#parentElement.insertAdjacentHTML('afterbegin', markup);
   }
 
+  //Publisher
+  addHandlerRender(handler) {
+    ['hashchange', 'load'].forEach(ev => window.addEventListener(ev, handler));
+    // window.addEventListener('hashchange', showRecipe);
+    // window.addEventListener('load', showRecipe);
+  }
+
   //HTML codes needed to display recipe + ingredients in the page
   #generateMarkup() {
     return `
