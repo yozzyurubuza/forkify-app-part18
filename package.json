@@ -18,6 +18,7 @@
   "homepage": "https://github.com/yozzyurubuza/forkify-app-part18#readme",
   "dependencies": {
     "core-js": "^3.21.1",
+    "fracty": "^1.0.9",
     "parcel": "^2.3.2",
     "regenerator-runtime": "^0.13.9"
   },
