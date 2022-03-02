@@ -43,6 +43,7 @@ export const loadSearchResults = async function (query) {
     console.log(data);
 
     state.search.results = data.data.recipes.map(rec => {
+      //Change key names
       return {
         id: rec.id,
         title: rec.title,
