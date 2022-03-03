@@ -68,3 +68,14 @@ export const getSearchResultsPage = function (page = state.search.page) {
 
   return state.search.results.slice(start, end);
 };
+
+export const updateServings = function (newServings) {
+  //Mutate the current array by changing the quantity inside the object
+  state.recipe.ingredients.forEach(ing => {
+    ing.quantity = (ing.quantity * newServings) / state.recipe.servings;
+    // newQt = oldQt * newServings / oldServings // 2 * 8/4 = 4
+  });
+
+  //Update state object
+  state.recipe.servings = newServings;
+};
