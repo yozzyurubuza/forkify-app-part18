@@ -45,3 +45,7 @@ C. Flowchart
 1. Search functionality: API search request
 2. Results with pagination
 3. Display recipe
+4. Change servings functionality
+5. Bookmarking functionality
+6. Store bookmark data in the browser
+7. On page load, read saved bookmarks
