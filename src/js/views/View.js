@@ -2,7 +2,7 @@ import icons from 'url:../../img/icons.svg'; // Parcel 2
 
 export default class View {
   _data;
-  render(data) {
+  render(data, render = true) {
     //Check if there is no data or empty array
     if (!data || (Array.isArray(data) && data.length === 0))
       return this.renderError();
@@ -10,6 +10,9 @@ export default class View {
     //Process data and display data in the HTML
     this._data = data;
     const markup = this._generateMarkup();
+
+    if (!render) return markup;
+
     this._clear();
     this._parentElement.insertAdjacentHTML('afterbegin', markup);
   }
