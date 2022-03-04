@@ -30,7 +30,7 @@ export default class View {
       // Updates changed TEXT
       if (
         !newEl.isEqualNode(curEl) &&
-        newEl.firstChild.nodeValue.trim() !== ''
+        newEl.firstChild?.nodeValue.trim() !== ''
       ) {
         // console.log('💥', newEl.firstChild?.nodeValue.trim());
         curEl.textContent = newEl.textContent;
@@ -38,10 +38,10 @@ export default class View {
 
       // Updates changed ATTRIBUTES
       if (!newEl.isEqualNode(curEl))
-        //Replace the attributes of the curEl (DOM) by the attributes coming from the newEl (After clicking + or -)
         Array.from(newEl.attributes).forEach(attr =>
           curEl.setAttribute(attr.name, attr.value)
         );
+      //Replace the attributes of the curEl (DOM) by the attributes coming from the newEl (After clicking + or -)
     });
   }
 
