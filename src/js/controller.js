@@ -4,9 +4,11 @@ import searchView from './views/searchView';
 import resultsView from './views/resultsView.js';
 import paginationView from './views/paginationView.js';
 import bookmarksView from './views/bookmarksView.js';
+import addRecipeView from './views/addRecipeView.js';
 
 // import icons from '../img/icons.svg'; // Parcel 1
 // import icons from 'url:../img/icons.svg'; // Parcel 2
+
 // Enables support for old browsers (Polyfilling)
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
@@ -94,6 +96,10 @@ const controlBookmarks = function () {
   bookmarksView.render(model.state.bookmarks);
 };
 
+const controlAddRecipe = function (newRecipe) {
+  console.log(newRecipe);
+};
+
 //Subscriber
 const init = function () {
   bookmarksView.addHandlerRender(controlBookmarks);
@@ -102,5 +108,6 @@ const init = function () {
   recipeView.addHandlerAddBookmark(controlAddBookmark);
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
+  addRecipeView.addHandlerUpload(controlAddRecipe);
 };
 init();
